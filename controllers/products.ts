@@ -3,15 +3,15 @@ import { getProductService, getProductsByCodeService } from "../services/product
 
 
 export const getProducts = async (req: Request, res: Response) => {
-    res.send(await getProductService())
+    return res.send(await getProductService())
 }
 
 export const getProductsByCode = async (req: Request, res: Response) => {
     const { code } = req.params
     const ans = await getProductsByCodeService(parseInt(code))
     if (ans) {
-        res.send(ans)
+        return res.send(ans)
     } else {
-        res.sendStatus(404)
+        return res.sendStatus(404)
     }
 }

@@ -3,5 +3,5 @@ import { getPacksService } from "../services/packs";
 
 
 export const getPacks = async (req: Request, res: Response) => {
-    res.send(await getPacksService())
+    return res.send(await getPacksService())
 }
